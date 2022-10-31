@@ -59,6 +59,13 @@ main {
     margin-right: 2vw;
     margin-left: 2vw;
 }
+#textArea {
+    width: 100%;
+    min-height: 100%;
+    resize: none;
+    outline: none;
+    font-size: 2rem;
+}
 
 #dynamicTitle {
     text-align: center;
@@ -70,9 +77,15 @@ main {
     background-color: #403d39;
     border: 1px solid #cac4ce;
     flex-direction: row;
+    min-height: 75vh;
 }
 #lineCounter {
+    resize: none;
+    outline: none;
+    font-size: 2rem;
     background-color: #ccc5b9;
     color: #252422;
+    min-height: 100%;
     flex-basis: 3%;
+    overflow: hidden;
 }
