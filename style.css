@@ -6,6 +6,7 @@ body {
 }
 .container {
     display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
 }
@@ -88,4 +89,14 @@ main {
     min-height: 100%;
     flex-basis: 3%;
     overflow: hidden;
+}
+
+#saveButton {
+    text-align: center;
+    background-color: #403d39;
+    transition: 0.3s background-color ease-in-out;
+    padding: 1vw;
+}
+#saveButton:hover {
+    background-color: #eb5e28;
 }
