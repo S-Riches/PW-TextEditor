@@ -1,3 +1,10 @@
+/*
+    Title : Text editor
+    Author : Sam Riches
+    Date : 11/22
+    Summary : A Text editor website that allows users to create .txt files and .md files, as well as edit pre-existing ones
+*/
+
 // ------------- DropDown Code -------------
 // basic show/hide on click for the dropdown
 const editFile = document.getElementById("editFile");
@@ -5,6 +12,7 @@ const createFile = document.getElementById("createFile");
 
 const createOptions = document.getElementById("hiddenCreateOptions");
 const editOptions = document.getElementById("hiddenEditOptions");
+// needed to ensure that the function can see that the display is set to none.
 createOptions.style.display = "none";
 editOptions.style.display = "none";
 
@@ -35,8 +43,13 @@ const loadTextEditor = () => {
 };
 const createGoTo = document.getElementById("submitBtnCreate");
 
+// avoids users from creating a file without a title.
 createGoTo.addEventListener("click", () => {
-    setupNewFile();
+    if (document.getElementById("fileName").value != "") {
+        setupNewFile();
+    } else {
+        alert("Please enter a title for the new file!");
+    }
 });
 
 // ------------- File Handling Code -------------
@@ -79,7 +92,7 @@ const readFile = (file) => {
 // we look for change (selecting a file) and then act on that change
 existingFile.addEventListener("change", (e) => {
     // runs the read file function by taking in the first file in the file list (which is always only one file)
-    const dataToLoad = readFile(e.target.files[0]);
+    readFile(e.target.files[0]);
 });
 
 // ------------- Create new file Logic -------------
@@ -131,10 +144,24 @@ const downloadFile = (fileContents, fileName) => {
     // create a new blob (file like data type), which contains the data and the file type of .txt
     let file = new Blob([fileContents], { type: "text/plain" });
     downloadButton.href = URL.createObjectURL(file);
-    downloadButton.download = fileName;
-    // downloadButton.click();
-    console.log(downloadButton);
-    URL.revokeObjectURL(downloadButton.href);
+    // if the file doesnt have a .txt or .md in the file name
+    if (String(fileName).includes(".txt")) {
+        downloadButton.download = fileName;
+        console.log(downloadButton);
+        URL.revokeObjectURL(downloadButton.href);
+    } else if (String(fileName).includes(".md")) {
+        downloadButton.download = fileName;
+        console.log(downloadButton);
+        URL.revokeObjectURL(downloadButton.href);
+    }
+    // default it to a .txt
+    else {
+        fileName = fileName + ".txt";
+        console.log(fileName);
+        downloadButton.download = fileName;
+        console.log(downloadButton);
+        URL.revokeObjectURL(downloadButton.href);
+    }
 };
 
 document.getElementById("saveButton").addEventListener("click", () => {
@@ -143,3 +170,11 @@ document.getElementById("saveButton").addEventListener("click", () => {
         document.getElementById("dynamicTitle").innerText
     );
 });
+
+// ------------- Refresh confirmation -------------
+// TODO uncomment before finishing.
+// adds an event listener that simply prevents the user from accidentally hitting refresh on their work - and asks them if they want to cancel the refresh.
+// window.addEventListener("beforeunload", (e) => {
+//     e.preventDefault();
+//     e.returnValue = "";
+// });
