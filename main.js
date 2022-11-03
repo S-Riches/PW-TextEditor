@@ -140,7 +140,7 @@ const matchTitleToFileName = () => {
 const downloadFile = (fileContents, fileName) => {
     // reference the download button to use later on in the function
     const downloadButton = document.getElementById("saveButton");
-    // create a new blob (file like data type), which contains the data and the file type of .txt
+    // create a new blob (file like data type), which contains the data
     let file = new Blob([fileContents], { type: "text/plain" });
     if (downloadButton.href !== null) {
         URL.revokeObjectURL(downloadButton.href);
