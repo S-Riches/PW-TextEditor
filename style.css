@@ -148,6 +148,8 @@ main {
     background-color: #252422;
     transition: 0.3s background-color ease-in-out;
     padding: 1vw;
+    color: #fffcf2;
+    text-decoration: none;
 }
 #saveButton:hover {
     background-color: #eb5e28;
