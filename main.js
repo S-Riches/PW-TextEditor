@@ -144,7 +144,7 @@ const downloadFile = (fileContents, fileName) => {
     // create a new blob (file like data type), which contains the data and the file type of .txt
     let file = new Blob([fileContents], { type: "text/plain" });
     downloadButton.href = URL.createObjectURL(file);
-    // if the file doesnt have a .txt or .md in the file name
+    // if the file doesn't have a .txt or .md in the file name
     if (String(fileName).includes(".txt")) {
         downloadButton.download = fileName;
         console.log(downloadButton);
@@ -172,9 +172,8 @@ document.getElementById("saveButton").addEventListener("click", () => {
 });
 
 // ------------- Refresh confirmation -------------
-// TODO uncomment before finishing.
 // adds an event listener that simply prevents the user from accidentally hitting refresh on their work - and asks them if they want to cancel the refresh.
-// window.addEventListener("beforeunload", (e) => {
-//     e.preventDefault();
-//     e.returnValue = "";
-// });
+window.addEventListener("beforeunload", (e) => {
+    e.preventDefault();
+    e.returnValue = "";
+});
