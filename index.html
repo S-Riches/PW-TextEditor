@@ -12,24 +12,34 @@
         <front>
             <div class="container">
                 <div class="positionBox">
-                    <h1>Text Edit</h1>
-                    <h2 id="createFile" class="dropDownTitle">
-                        Create a file ↓
-                    </h2>
-                    <div id="hiddenCreateOptions" class="dropDown">
-                        <label for="fileName">File Name ↓ </label>
-                        <input type="text" id="fileName" /><br />
-                        <input type="submit" id="submitBtnCreate" />
-                        <!-- insert file type here -->
-                    </div>
-                    <h2 id="editFile" class="dropDownTitle">Edit a file ↓</h2>
-                    <div id="hiddenEditOptions" class="dropDown">
-                        <label for="existingFile">Upload .txt file ↓</label>
-                        <input
-                            type="file"
-                            id="existingFile"
-                            accept=".txt, .md"
-                        />
+                    <h1>Text Editor</h1>
+                    <div id="splitBox">
+                        <div id="create">
+                            <h2 id="createFile" class="dropDownTitle">
+                                Create New File ↓
+                            </h2>
+                            <div id="hiddenCreateOptions" class="dropDown">
+                                <label for="fileName">File Name ↓ </label>
+                                <input type="text" id="fileName" /><br />
+                                <input type="submit" id="submitBtnCreate" />
+                                <!-- insert file type here -->
+                            </div>
+                        </div>
+                        <div id="editFile">
+                            <h2 id="editFile" class="dropDownTitle">
+                                Edit A File ↓
+                            </h2>
+                            <div id="hiddenEditOptions" class="dropDown">
+                                <label for="existingFile"
+                                    >Upload .txt file ↓</label
+                                >
+                                <input
+                                    type="file"
+                                    id="existingFile"
+                                    accept=".txt, .md"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

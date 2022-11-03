@@ -2,44 +2,66 @@
 body {
     font-family: "Inconsolata", monospace;
     color: #fffcf2;
-    background-color: #252422;
+    background-color: #403d39;
 }
 .container {
     display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
+    justify-content: center;
 }
 .positionBox {
-    margin-top: 30vh;
+    /* margin-top: 30vh; */
+    min-width: 50vw;
     padding: 5vw;
-    border-radius: 5%;
-    background-color: #403d39;
+    border-radius: 5vw;
+    background-color: #252422;
     justify-content: center;
     border: 1px solid #403d39;
     box-shadow: 10px 10px 40px black;
 }
+
+#splitBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 5vw;
+}
 .container h1 {
-    background-color: #403d39;
+    background-color: #252422;
     color: #eb5e28;
     text-decoration: underline;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 .dropDownTitle {
     background-color: #403d39;
-    font-size: 2rem;
+    font-size: 3rem;
+    color: #cac4ce;
+    padding: 1vw;
+    border-radius: 1vw;
+    transition: 0.2s color ease-in-out;
+    transition: 0.2s background-color ease-in-out;
+    transition: 0.2s box-shadow ease-in-out;
+}
+.dropDownTitle:hover {
+    box-shadow: 1px 10px 20px black;
+    background-color: #585550;
+    color: #fffcf2;
 }
 .dropDown input {
     background-color: #252422;
     outline: none;
     color: #eb5e28;
-    max-width: 100%;
     font-family: "Inconsolata", monospace;
-    border: 2px solid #252422;
-    font-size: 1rem;
+    border: 2px solid #403d39;
+    font-size: 1.5rem;
 }
 .dropDown label {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    background-color: #252422;
+    margin-bottom: 1vw;
     text-align: center;
 }
 #mainBar {
@@ -52,11 +74,7 @@ body {
     flex-direction: column;
 }
 #hiddenCreateOptions {
-    background-color: #403d39;
     flex-direction: column;
-}
-.dropDownTitle:hover {
-    color: darkgray;
 }
 
 main {
@@ -70,6 +88,8 @@ main {
     width: 100%;
     min-height: 100%;
     resize: none;
+    background-color: #252422;
+    color: #cac4ce;
     outline: none;
     font-size: 2rem;
     overflow: hidden;
@@ -98,12 +118,47 @@ main {
     overflow: hidden;
 }
 
+@media screen and (max-width: 768px) {
+    #lineCounter {
+        flex-basis: 5%;
+        font-size: 1.5rem;
+    }
+    #textArea {
+        font-size: 1.5rem;
+    }
+    .container {
+        justify-content: center;
+        align-items: center;
+    }
+    .container h1 {
+        font-size: 2.5rem;
+    }
+    .dropDownTitle {
+        font-size: 2rem;
+    }
+    .dropDown input {
+        font-size: 1.25rem;
+    }
+    #splitBox {
+        flex-direction: column;
+    }
+}
 #saveButton {
     text-align: center;
-    background-color: #403d39;
+    background-color: #252422;
     transition: 0.3s background-color ease-in-out;
     padding: 1vw;
 }
 #saveButton:hover {
     background-color: #eb5e28;
+}
+#submitBtnCreate {
+    align-self: center;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    background-color: #403d39;
+    transition: 0.2s background-color ease-in-out;
+}
+#submitBtnCreate:hover {
+    background-color: #585550;
 }
