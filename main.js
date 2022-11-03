@@ -136,23 +136,23 @@ const matchTitleToFileName = () => {
 };
 
 // ------------- Download file Logic -------------
-// PLEASE NOTE - THIS WORKS, BUT DUE TO BROWSERS BLOCKING HTTP DOWNLOADS THIS WONT WORK ON DEV SERVERS - if i have time i will get an OpenSSL cert to prove this.
 
 const downloadFile = (fileContents, fileName) => {
     // reference the download button to use later on in the function
     const downloadButton = document.getElementById("saveButton");
     // create a new blob (file like data type), which contains the data and the file type of .txt
     let file = new Blob([fileContents], { type: "text/plain" });
+    if (downloadButton.href !== null) {
+        URL.revokeObjectURL(downloadButton.href);
+    }
     downloadButton.href = URL.createObjectURL(file);
     // if the file doesn't have a .txt or .md in the file name
     if (String(fileName).includes(".txt")) {
         downloadButton.download = fileName;
         console.log(downloadButton);
-        URL.revokeObjectURL(downloadButton.href);
     } else if (String(fileName).includes(".md")) {
         downloadButton.download = fileName;
         console.log(downloadButton);
-        URL.revokeObjectURL(downloadButton.href);
     }
     // default it to a .txt
     else {
@@ -160,7 +160,6 @@ const downloadFile = (fileContents, fileName) => {
         console.log(fileName);
         downloadButton.download = fileName;
         console.log(downloadButton);
-        URL.revokeObjectURL(downloadButton.href);
     }
 };
 
