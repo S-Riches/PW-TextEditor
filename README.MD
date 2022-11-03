@@ -19,13 +19,15 @@ This project was created during my 6th week of the JustIT software development b
 
 #### Create a file :
 
--   To Create a new file click on the The gray button that says 'Create New File '![dropDownMenu](createNew.png)
+-   To Create a new file click on the The gray button that says 'Create New File '
+-   ![dropDownMenu](createNew.png)
 -   Simply Type in the name of the file you will be creating!
 -   ##### Bonus : if you name your file and include '.md' at the end you can create a markdown file!
 
 #### Edit a file :
 
--   To Edit a File click on the 'Edit A File' ![editFile](editFile.png))
+-   To Edit a File click on the 'Edit A File'
+-   ![editFile](editFile.png)
 -   Then Simply click 'Choose file' which should open your file explorer! any .txt file or .md file is accepted!
 
 #### In the text editor :
